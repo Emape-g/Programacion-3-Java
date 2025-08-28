@@ -1,40 +1,30 @@
-package org.example;
+import org.example.Producto;
+import java.util.HashSet;
+import java.util.Set;
 
-import java.util.HashMap;
-import java.util.Map;
-
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        Map<String, Curso> cursos = new HashMap<>();
 
-        // 3. Agregar 10 cursos
-        cursos.put("J101", new Curso("Java Básico", "Ana García"));
-        cursos.put("P202", new Curso("Python Intermedio", "Luis Pérez"));
-        cursos.put("D303", new Curso("Bases de Datos", "María López"));
-        cursos.put("C404", new Curso("C++ Avanzado", "Carlos Ruiz"));
-        cursos.put("W505", new Curso("Desarrollo Web", "Laura Fernández"));
-        cursos.put("A606", new Curso("Algoritmos y Estructuras de Datos", "Ricardo Morales"));
-        cursos.put("S707", new Curso("Seguridad Informática", "Sofía Mendoza"));
-        cursos.put("N808", new Curso("Redes de Computadoras", "Javier Ramos"));
-        cursos.put("M909", new Curso("Machine Learning", "Elena Domínguez"));
-        cursos.put("R110", new Curso("React JS", "Pedro Jiménez"));
+        Set<Producto> inventario = new HashSet<>();
 
+        Producto p1 = new Producto("A001", "Notebook HP");
+        Producto p2 = new Producto("B002", "Mouse Logitech");
+        Producto p3 = new Producto("A001", "Notebook Dell");
+        Producto p4 = new Producto("C003", "Monitor Samsung");
+        Producto p5 = new Producto("B002", "Mouse Genius");
 
+        inventario.add(p1);
+        inventario.add(p2);
+        inventario.add(p3);
+        inventario.add(p4);
+        inventario.add(p5);
 
-        String codigoBuscado = "M909";
-        if (cursos.containsKey(codigoBuscado)) {
-            Curso cursoRecuperado = cursos.get(codigoBuscado);
-            System.out.println("Curso recuperado con la clave " + codigoBuscado + ": " + cursoRecuperado);
-        } else {
-            System.out.println("No se encontró el curso con el código " + codigoBuscado + ".");
-        }
+        System.out.println("El tamaño del HashSet es: " + inventario.size() + "\n");
 
-        for (Map.Entry<String, Curso> entrada : cursos.entrySet()) {
-            System.out.println("Clave (código): " + entrada.getKey() + " -> " + "Valor (curso): " + entrada.getValue());
+        
+        System.out.println("Inventario de productos (sin duplicados):");
+        for (Producto producto : inventario) {
+            System.out.println(producto);
         }
     }
 }
