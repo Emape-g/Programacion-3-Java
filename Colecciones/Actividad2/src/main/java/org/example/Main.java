@@ -21,7 +21,7 @@ public class Main {
 
         System.out.println("El tamaño del HashSet es: " + inventario.size() + "\n");
 
-        
+
         System.out.println("Inventario de productos (sin duplicados):");
         for (Producto producto : inventario) {
             System.out.println(producto);
